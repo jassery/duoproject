@@ -5,7 +5,7 @@ var cars = [
         img:"./images/fiat.png",
         models : [{
             model:"punto",
-            img:"punto.jpg"
+            img:"./images/punto.jpg"
         },
          {
             model:"500",
@@ -31,7 +31,7 @@ var cars = [
         },
          {
             model:"3008",
-            img:"./images/peugeot (1).jpg"
+            img:"./images/peugeot (2).jpg"
         }]
     },{
         model:"renault",
@@ -114,9 +114,13 @@ var cars = [
     return acc;
     }
     
-    
-   each(cars,function(e){
-    $("body").append('<div class="aa"><img src="'+e.img+'"/></div>')
+    function myfunc(i)
+    {
+      
+        
+    }
+   each(cars,function(e,i){
+    $("body").append('<div class="aa"><img src="'+e.img+'" id="img'+i+'" onclick="myfunc('+i+')"></div>')
     })
 
 
@@ -124,16 +128,73 @@ var cars = [
        
 
       
-     var x =   filter (cars,function(e){
-          return   $("#inpt").val()===e.model
+      var x =   filter (cars,function(e){
+          return   $("#inpt").val()===e.model 
             
          })
          
          $("div").empty()
 
          each(x,function(e){
-            $("body").append('<div class="aa"><img src="'+e.img+'"/></div>')
+            each(e.models ,function (k){
+                $("body").append('<div class="aa"><img src="'+k.img+'"/></div>')
             })
+           
+            })
+            each(cars,function(e){
+                each(e.models ,function (k){
+                    if(k.model===$("#inpt").val())
+                    {$("body").append('<div class="aa"><img src="'+k.img+'"/></div>')}
+                })
+               
+                })   
+      
     })
 
+
+
+    //$("div").on("click",function(e){
+     //   if (e.target.children()===)
+        
+     //   $("div").empty()
+
+     //   each(e.models ,function (k){
+     //       $("body").append('<div class="aa"><img src="'+k.img+'"/></div>')
+      //  })
+    //})
+    $(document).on("click",function(e){
+        
+        if(e.target.tagName==="IMG"){
+            
+          
+            
+
+          
+    }
+
+        if(e.target.tagName==="DIV"){
+            // var p="#img"+e.target.id
+            console.log($(e.target).children()[0])
+            // $(p).show()
+            $($(e.target).children()[0]).show("slow")
+        }
+    
+    }) 
+
+    
+
+
+        
+
+
+    function map(array, f) { 
+        var acc = []; 
+        each(array, function(element, i) { 
+              acc.push(f(element, i)); 
+        }); 
+        return acc; 
+  }
+
+ 
+ 
 
