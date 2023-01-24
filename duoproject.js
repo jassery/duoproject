@@ -83,12 +83,12 @@ var cars = [
         img:"./images/seat.png",
         models : [{
             model:"ibiza",
-            img:"./images/seatibiza (1).png",
+            img:"./images/seatibiza.png",
             price: 46000
         },
          {
             model:"leon",
-            img:"./images/seatleon (1).jpg",
+            img:"./images/seatleon.jpg",
             price: 45000
         }]
     },{
