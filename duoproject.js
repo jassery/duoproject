@@ -124,8 +124,9 @@ var cars = [
         each(e.models ,function (k){
             $("body").append('<div class="aa"><img src="'+k.img+'"/></div>')
         })
-
     }
+
+
    each(cars,function(e,i){
     $("body").append('<div class="aa"><img src="'+e.img+'" id="img'+i+'" onclick="myfunc('+i+')"></div>')
     })
@@ -160,20 +161,7 @@ var cars = [
 
 
 
-    //$("div").on("click",function(e){
-     //   if (e.target.children()===)
-        
-     //   $("div").empty()
-
-     //   each(e.models ,function (k){
-     //       $("body").append('<div class="aa"><img src="'+k.img+'"/></div>')
-      //  })
-    //})
     
-    
-
-
-        
 
 
     function map(array, f) { 
